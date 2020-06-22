@@ -49,6 +49,7 @@ exports.getOneTeddy = (req, res, next) => {
 exports.orderTeddies = (req, res, next) => {
   let queries = [];
   for (let productId of req.body.products) {
+
     const queryPromise = new Promise((resolve, reject) => {
       Teddy.findById(productId).then(
         (teddy) => {
@@ -65,6 +66,7 @@ exports.orderTeddies = (req, res, next) => {
   }
   Promise.all(queries).then(
     (teddies) => {
+
       const orderId = uuid();
       return res.status(201).json({
         contact: req.body.contact,

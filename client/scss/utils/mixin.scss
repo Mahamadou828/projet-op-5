@@ -1,0 +1,43 @@
+@mixin mobile-only {
+  @media screen and (min-width: 150px) and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin tablette {
+  @media screen and (max-width: 860px) {
+    @content;
+  }
+}
+
+.nav-carousel {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  right: -20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: $white;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.button-item {
+  width: 50%;
+  border: none;
+  border-right: 1px solid $color-border;
+  background-color: $button-item-bg;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+  color: $button-item-color;
+  cursor: pointer;
+  font-size: 18px;
+  outline: none;
+}

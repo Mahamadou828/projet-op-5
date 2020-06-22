@@ -1,0 +1,82 @@
+.panier {
+  &-product {
+    max-width: 90%;
+    margin: 50px auto;
+    border-top: 4px solid $black;
+    text-align: center;
+    background: $white;
+    padding-bottom: 30px;
+
+    hr {
+      max-width: 100px;
+      margin: 0 auto;
+      background-color: $black;
+      border: none;
+      height: 3px;
+    }
+
+    p {
+      padding: 0px 50px;
+      color: $font-color;
+    }
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      label {
+        text-decoration: underline;
+        font-size: 18px;
+      }
+
+      .numbers-rows {
+        max-width: 140px !important;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-command {
+    margin: 0 auto;
+    text-decoration: none;
+    font-family: $Roboto-font;
+    border: none;
+    color: $white;
+    background: $black;
+    padding: 10px;
+    margin: 0px auto 20px auto;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin: 0 auto 20px auto;
+  padding: 30px;
+  text-align: center;
+  background: $black;
+
+  .input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-color: $button-item-color;
+    font-size: 18px;
+    line-height: 10px;
+  }
+
+  .error {
+    background: $error-color;
+  }
+
+  button {
+    width: 125px;
+    margin: 0 auto;
+    padding: 5px;
+    background: $white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
