@@ -66,6 +66,37 @@ h1 {
   text-align: center;
 }
 
+.popup {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #343a40;
+  color: #fff;
+  padding: 10px;
+  height: 30px !important;
+  border-radius: 5px;
+}
+.popup-contain {
+  display: none;
+}
+@media screen and (min-width: 150px) and (max-width: 500px) {
+  .popup {
+    width: 200px;
+  }
+}
+.popup button {
+  height: 40px;
+  font-size: 25px;
+  background: #343a40;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 5px;
+  margin-left: 25px;
+}
+
 .shop {
   top: 60px;
 }

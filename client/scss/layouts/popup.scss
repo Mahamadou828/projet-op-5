@@ -1,0 +1,31 @@
+.popup {
+  &-contain {
+    display: none;
+  }
+
+  @include mobile-only {
+    width: 200px;
+  }
+
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $black;
+  color: $white;
+  padding: 10px;
+  height: 30px !important;
+  border-radius: 5px;
+
+  button {
+    height: 40px;
+    font-size: 25px;
+    background: $black;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin-left: 25px;
+  }
+}

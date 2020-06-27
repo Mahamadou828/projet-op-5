@@ -1,6 +1,7 @@
 import RenderHtmlElement from "../RenderHtmlElement.js";
 import Connection from "../Class/Connection.js";
 import { DefaultConnection } from "../Class/Connection.js";
+import DOMAnimation from "../Class/SlideAniamtion.js";
 
 /**
  * creer le rendu de la page VoirProduit.html
@@ -59,6 +60,10 @@ function RenderForm(product, CartItem) {
   const button = RenderHtmlElement("button", {
     class: "order-button",
     innerHTML: "Commander",
+  });
+
+  button.addEventListener("click", function () {
+    DOMAnimation.slideDown(document.getElementById("popup"));
   });
 
   const div = RenderHtmlElement("div", { class: "container" }, [

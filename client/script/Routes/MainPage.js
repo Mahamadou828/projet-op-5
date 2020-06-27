@@ -15,7 +15,6 @@ import DOMAnimation from "../Class/SlideAniamtion.js";
  */
 export default function RenderMainPage(app, Cart) {
   const CartProperty = Cart.getAllComponentAndEvent();
-  const productHtml = [];
   const productObject = [];
   const request = DefaultConnection.sendRequest(
     Connection.generateDefaultGetHeader()
@@ -49,7 +48,7 @@ export default function RenderMainPage(app, Cart) {
             CartProperty.shopCartComponent.dispatchEvent(
               CartProperty.AddProductEvent
             );
-            DOMAnimation.slideUp(document.querySelector("#popup"));
+            DOMAnimation.slideDown(document.getElementById("popup"));
           }
         });
       });
@@ -57,4 +56,5 @@ export default function RenderMainPage(app, Cart) {
     .catch((error) => {
       console.log(error);
     });
+  DOMAnimation.slideUp(document.querySelector("#popup"));
 }

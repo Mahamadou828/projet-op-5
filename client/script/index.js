@@ -17,6 +17,7 @@ window.onload = () => {
     "a",
     {
       innerHTML: "Orinoco",
+      href: "/client/index.html",
     },
     [RenderHtmlElement("i", { class: "fas fa-shopping-cart" })]
   );
@@ -45,13 +46,13 @@ window.onload = () => {
   let currentPage = window.location.href.split("client/")[1];
   currentPage = currentPage.split("?");
 
-  app.appendChild(PopUp());
-
   switch (currentPage[0]) {
     case "index.html":
+      app.appendChild(PopUp());
       MainPage(app, CartItem);
       break;
     case "voirProduit.html":
+      app.appendChild(PopUp());
       VoirProduit(app, currentPage[1], CartItem);
       break;
     case "panier.html":

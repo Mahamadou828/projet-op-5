@@ -164,7 +164,7 @@ function setError(input, error) {
  */
 function sendCommand(event) {
   event.preventDefault();
-  const price = document.querySelector("#price").innerHTML;
+  const price = document.querySelector("#price").innerHTML.split("Au total")[1];
 
   if (parseInt(price) > 0) {
     const inputs = document.querySelectorAll(".input");

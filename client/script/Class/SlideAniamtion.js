@@ -58,7 +58,6 @@ export default class DOMAnimation {
     element.style.removeProperty("margin-top");
     element.style.removeProperty("margin-bottom");
     element.style.height = height;
-    console.log("fait");
     window.setTimeout(function () {
       element.style.display = display;
       element.style.removeProperty("heigth");
@@ -79,7 +78,6 @@ export default class DOMAnimation {
     let display = window.getComputedStyle(element).display;
 
     if (display === "none") {
-      console.log("slide down");
       this.slideDown(element, duration);
     } else {
       this.slideUp(element, duration);

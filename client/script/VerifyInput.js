@@ -20,7 +20,7 @@ export function VerifyEmail(email) {
 export function VerifyText(text) {
   if (text.length === 0) {
     return "Ce champ est requis";
-  } else if (/^[a-zA-Z 0-9 ]+$/.test(text)) {
+  } else if (/(a-zA-Z)+(\!\@\#\$\%\^\&\*\(\))+/.test(text)) {
     return "Ce champ n'est pas valide";
   } else {
     return "";
