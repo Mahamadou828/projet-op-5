@@ -46,6 +46,7 @@ window.onload = () => {
   let currentPage = window.location.href.split("client/")[1];
   currentPage = currentPage.split("?");
 
+  //appelle les fonctions de rendu selon la page
   switch (currentPage[0]) {
     case "index.html":
       app.appendChild(PopUp());

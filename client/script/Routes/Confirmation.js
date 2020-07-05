@@ -1,3 +1,6 @@
+/**
+ * Creer le rendu de la page confirmation.html
+ */
 export default function Confirmation() {
   const { orderId, price } = JSON.parse(localStorage.getItem("orderId"));
   localStorage.clear();

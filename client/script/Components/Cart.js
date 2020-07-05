@@ -1,9 +1,12 @@
 import RenderHtmlElement from "../RenderHtmlElement.js";
 import CartObjetProperty from "../Class/CartObject.js";
 
+/**
+ * Genere le panier present sur les pages
+ */
 export default class Cart extends CartObjetProperty {
   /**
-   * @param {String} keyItem
+   * @param {String} keyItem la cle pour le localStorage
    */
   constructor(keyItem) {
     super(keyItem);

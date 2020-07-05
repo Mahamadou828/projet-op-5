@@ -4,7 +4,6 @@
  * @param {Object} cart le panier de l'utilisateur
  */
 import { DefaultConnection } from "../Class/Connection.js";
-import Connection from "../Class/Connection.js";
 import Product from "../Components/Product.js";
 import DOMAnimation from "../Class/SlideAniamtion.js";
 
@@ -17,7 +16,7 @@ export default function RenderMainPage(app, Cart) {
   const CartProperty = Cart.getAllComponentAndEvent();
   const productObject = [];
   const request = DefaultConnection.sendRequest(
-    Connection.generateDefaultGetHeader()
+    DefaultConnection.defaultGetHeader
   );
   request
     .then((data) => {

@@ -51,7 +51,7 @@ export default class CartObjectProperty {
 
   /**
    *
-   * @param {*} item
+   * @param {Object} item
    */
   removeItem(item) {
     this.products.forEach((product) => {

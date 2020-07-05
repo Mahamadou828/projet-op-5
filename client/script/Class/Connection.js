@@ -1,20 +1,36 @@
 export default class Connection {
-  //creation d'un objet de connection charger de toutes les requetes envoyer au back
-  constructor(productToRequest, data = {}) {
+  /**
+   * Objet qui s'occupe de la connection a l'api, des requetes etc
+   * @param {String} productToRequest permet d'indiquer qu'elle produit nous voulons recevoir de l'api
+   */
+  constructor(productToRequest) {
     this.baseRoute = "http://localhost:3000/api";
     this.productToRequest = productToRequest;
-    this.data = data;
-  }
 
-  static generateDefaultGetHeader() {
-    return {
+    this.defaultGetHeader = {
       method: "GET",
       headers: new Headers(),
       mode: "cors",
       cache: "default",
     };
+
+    this.defaultPostHeader = {
+      method: "POST",
+      body: JSON.stringify({}),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      cache: "default",
+    };
+
+    this.sendRequest = this.sendRequest.bind(this);
   }
 
+  /**
+   * permet  de generer un header pour les requetes de type POST
+   * @param {Object} parameter
+   */
   static generateDefaultPostHeader(parameter) {
     return {
       method: "POST",
@@ -27,16 +43,18 @@ export default class Connection {
     };
   }
 
-  sendRequest = (header, url = "", saveData = false) => {
+  /**
+   * Permet d'envoyer une requete a l'api
+   * @param {Headers} header header pour la requete
+   * @param {String} url
+   */
+  sendRequest(header, url = "") {
     return new Promise((resolve, reject) => {
       fetch(`${this.baseRoute}/${this.productToRequest}/${url}`, header)
         .then((respond) => {
           respond
             .json()
             .then((data) => {
-              if (saveData) {
-                this.data = data;
-              }
               resolve(data);
             })
             .catch((error) => {
@@ -47,7 +65,8 @@ export default class Connection {
           reject(error);
         });
     });
-  };
+  }
 }
 
+//Objet de connection par defaut, recupere la categorie "teddies" des produits
 export const DefaultConnection = new Connection("teddies");

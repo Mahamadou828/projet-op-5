@@ -170,7 +170,7 @@ h1 {
 .slotholder {
   width: 100%;
   height: 600px;
-  background-image: url("../../../images/bear-3096377_1280.jpg");
+  background-image: url("../../images/bear-3096377_1280.jpg");
   position: relative;
 }
 .slotholder h1 {
@@ -188,7 +188,7 @@ h1 {
 }
 
 .yourProduct {
-  background-image: url("../../../images/background_hero.jpg");
+  background-image: url("../../images/background_hero.jpg");
   color: #2a5b6c;
   height: 200px;
 }

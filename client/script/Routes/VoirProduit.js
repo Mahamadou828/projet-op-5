@@ -1,5 +1,4 @@
 import RenderHtmlElement from "../RenderHtmlElement.js";
-import Connection from "../Class/Connection.js";
 import { DefaultConnection } from "../Class/Connection.js";
 import DOMAnimation from "../Class/SlideAniamtion.js";
 
@@ -12,7 +11,7 @@ import DOMAnimation from "../Class/SlideAniamtion.js";
  */
 export default function VoirProduit(app, idProduct, CartItem) {
   const request = DefaultConnection.sendRequest(
-    Connection.generateDefaultGetHeader(),
+    DefaultConnection.defaultGetHeader,
     idProduct.split("id=")[1]
   );
   request
@@ -49,6 +48,11 @@ export default function VoirProduit(app, idProduct, CartItem) {
     });
 }
 
+/**
+ * Genere le formulaire present sur la page
+ * @param {Object} product
+ * @param {Object} CartItem
+ */
 function RenderForm(product, CartItem) {
   const { colors, _id, price, imageUrl, description } = product;
 
@@ -105,6 +109,11 @@ function RenderForm(product, CartItem) {
   return container;
 }
 
+/**
+ * Genere le champ Number du formulaire
+ * @param {Number} number
+ * @param {Function} funcToAdd
+ */
 export function RenderInputNumber(number, funcToAdd = null) {
   const label = RenderHtmlElement("label", { innerHTML: "Number:" });
 
@@ -150,6 +159,10 @@ export function RenderInputNumber(number, funcToAdd = null) {
   return RenderHtmlElement("div", { class: "container" }, [label, Number]);
 }
 
+/**
+ * genere le select du formulaire
+ * @param {Array} colors
+ */
 function RenderSelectForm(colors) {
   const label = RenderHtmlElement("label", { innerHTML: "Colors:" });
 
