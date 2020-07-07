@@ -26,7 +26,7 @@ export default function RenderMainPage(app, Cart) {
           elt.renderProduct({
             class: "product__item",
             addLink: true,
-            link: `/client/voirProduit.html?id=${element._id}`,
+            link: `./voirProduit.html?id=${element._id}`,
             linkText: "Regarder l'objet",
           })
         );

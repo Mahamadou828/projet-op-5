@@ -17,7 +17,7 @@ window.onload = () => {
     "a",
     {
       innerHTML: "Orinoco",
-      href: "/client/index.html",
+      href: "./index.html",
     },
     [RenderHtmlElement("i", { class: "fas fa-shopping-cart" })]
   );
